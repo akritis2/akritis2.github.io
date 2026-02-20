@@ -2,52 +2,54 @@
 <head>
     <title>CODEC | Home</title>
     <style>
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background-color: #f5f0e1; 
-            color: #2c3e50;            
-            text-align: center;        
-            padding: 50px 20px;
-        }
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        background-color: #f5f0e1; 
+        color: #2c3e50;            
+        text-align: center;        
+        padding: 50px 20px;
+    }
 
-        /* This styles your logo to blend in */
-        .club-logo {
-            width: 150px;         /* Adjust size as needed */
-            height: auto;
-            opacity: 0.6;         /* This makes it "blend" (0.1 is faint, 1.0 is solid) */
-            margin-bottom: 20px;
-            filter: grayscale(20%); /* Optional: mutes the colors slightly to match the tan */
-        }
+    /* THE WATERMARK CSS */
+    .watermark {
+        position: fixed;       
+        top: 50%;              
+        left: 50%;             
+        transform: translate(-50%, -50%); 
+        width: 400px;          /* Adjust this to make it bigger or smaller */
+        opacity: 0.1;          /* Lower this if the text is hard to read */
+        z-index: -1;           
+        pointer-events: none;  
+    }
 
-        h1 { 
-            color: #1a4a7a; 
-            font-size: 2.5em;
-            margin-top: 0;        /* Pulls text closer to the logo */
-        }
+    h1 { 
+        color: #1a4a7a; 
+        font-size: 2.5em;
+    }
 
-        .button {
-            display: inline-block;
-            padding: 15px 25px;
-            background-color: #1a4a7a;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: 0.3s;
-            margin: 10px; 
-        }
+    .button {
+        display: inline-block;
+        padding: 15px 25px;
+        background-color: #1a4a7a;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+        margin: 10px; 
+    }
 
-        .button:hover {
-            background-color: #265d95;
-            transform: scale(1.05);
-        }
+    .button:hover {
+        background-color: #265d95;
+        transform: scale(1.05);
+    }
 
-        nav { margin-top: 30px; }
-    </style>
+    nav { margin-top: 30px; }
+</style>
 </head>
 <body>
 
-    <img src="logo.png" alt="CODEC Logo" class="club-logo">
+    <img src="CODEC.png" alt="" class="watermark">
 
     <h1>Welcome to the CODEC website!</h1>
     <p>This site is hosted on GitHub Pages.</p>
