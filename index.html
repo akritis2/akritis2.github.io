@@ -2,21 +2,29 @@
 <head>
     <title>CODEC | Home</title>
     <style>
-        /* 1. Match the background and center the text */
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background-color: #f5f0e1; /* Soft Tan */
-            color: #2c3e50;            /* Dark Navy Blue */
-            text-align: center;        /* Centers everything on the page */
+            background-color: #f5f0e1; 
+            color: #2c3e50;            
+            text-align: center;        
             padding: 50px 20px;
+        }
+
+        /* This styles your logo to blend in */
+        .club-logo {
+            width: 150px;         /* Adjust size as needed */
+            height: auto;
+            opacity: 0.6;         /* This makes it "blend" (0.1 is faint, 1.0 is solid) */
+            margin-bottom: 20px;
+            filter: grayscale(20%); /* Optional: mutes the colors slightly to match the tan */
         }
 
         h1 { 
             color: #1a4a7a; 
             font-size: 2.5em;
+            margin-top: 0;        /* Pulls text closer to the logo */
         }
 
-        /* 2. Style the buttons and add spacing */
         .button {
             display: inline-block;
             padding: 15px 25px;
@@ -26,26 +34,23 @@
             border-radius: 8px;
             font-weight: bold;
             transition: 0.3s;
-            
-            /* This adds 10px of space around each button */
             margin: 10px; 
         }
 
         .button:hover {
-            background-color: #265d95; /* Slightly lighter blue on hover */
+            background-color: #265d95;
             transform: scale(1.05);
         }
 
-        /* Optional: Style the container for the buttons */
-        nav {
-            margin-top: 30px;
-        }
+        nav { margin-top: 30px; }
     </style>
 </head>
 <body>
 
-    <h1>Welcome to the CODEC website.</h1>
-    <p>(This site is hosted on GitHub Pages)</p>
+    <img src="logo.png" alt="CODEC Logo" class="club-logo">
+
+    <h1>Welcome to the CODEC website!</h1>
+    <p>This site is hosted on GitHub Pages.</p>
 
     <nav>
         <a href="about_us.html" class="button">👋 About CODEC</a>
