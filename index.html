@@ -7,39 +7,39 @@
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             background-color: #f5f0e1; /* Tan */
-            color: #2c3e50; 
+            color: #2c3e50; /* Blue */
             margin: 0;
             padding: 0;
             text-align: center;
         }
 
-        /* --- HEADER / NAVBAR --- */
-        header {
-            background-color: #ffffff; /* White navbar for contrast */
-            padding: 10px 40px;
-            display: flex;
-            justify-content: space-between; /* Pushes logo left, nav right */
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+      header {
+        background-color: #ffffff;
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between; /* This keeps them on opposite ends */
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 30px;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            color: #1a4a7a; /* Blue */
-            font-weight: bold;
-            margin-left: 30px;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #265d95;
-        }
+    .nav-links a {
+        text-decoration: none;
+        color: #1a4a7a;
+        font-weight: bold;
+        transition: 0.3s;
+        margin-left: 0; 
+    }
 
         .header-logo img {
-            height: 40px; /* Small logo for the navbar */
+            height: 40px;
             transition: 0.3s;
         }
 
@@ -103,15 +103,15 @@
     <img src="logo.png" class="watermark" alt="">
 
     <header>
+        <a href="index.html" class="header-logo">
+            <img src="CODEC.png" alt="CODEC Home">
+        </a>
+        
         <div class="nav-links">
             <a href="about_us.html">About Us</a>
             <a href="events.html">Events</a>
             <a href="contact.html">Contact Us</a>
-        </div>
-        
-        <a href="index.html" class="header-logo">
-            <img src="logo.png" alt="CODEC Home">
-        </a>
+        </div>  
     </header>
 
     <div class="hero-section">
@@ -121,13 +121,13 @@
     </div>
 
     <footer>
-        <img src="logo.png" alt="CODEC Logo" class="footer-logo">
+        <img src="CODEC.png" alt="CODEC Logo" class="footer-logo">
         <br>
         <a href="contact.html" class="footer-btn">Contact Us</a>
         
         <div class="social-links">
-            <a href="https://discord.gg/yourlink" target="_blank">Discord</a>
-            <a href="https://instagram.com/yourhandle" target="_blank">Instagram</a>
+            <a href="https://discord.gg/QSYSCFb" target="_blank">Discord</a>
+            <a href="https://www.instagram.com/codec.uci/" target="_blank">Instagram</a>
         </div>
         <p style="font-size: 0.7em; margin-top: 20px;">© 2026 CODEC. All rights reserved.</p>
     </footer>
