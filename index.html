@@ -71,61 +71,66 @@
 
         /* --- FOOTER --- */
         footer {
-            background-color: #1a4a7a; /* Blue */
-            color: #f5f0e1; /* Tan */
-            padding: 60px 40px 20px 40px; /* Extra top padding for the logo */
+            background-color: #1a4a7a;
+            color: #f5f0e1;
+            padding: 40px 20px;
             margin-top: 50px;
+            text-align: left; /* Aligns the copyright and content to the left */
         }
         
-        .footer-container {
+        .footer-content {
             display: flex;
-            justify-content: space-between; /* Logo left, Socials right */
-            align-items: center;
+            align-items: center; /* Centers items vertically */
+            gap: 40px;           /* Sets a specific distance from the logo */
             max-width: 1000px;
-            margin: 0 auto; /* Centers the whole footer content on the screen */
+            margin: 0 auto;      /* Keeps the whole unit centered on the page */
         }
         
         .footer-logo {
-            width: 120px;
-            height: 120px;
-            object-fit: contain; /* Squares logo */
+            width: 160px;
+            height: 160px;
+            object-ratio: 1/1;
+            object-fit: contain;
+        }
+        
+        .footer-links-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        /* Base style for all footer links */
+        .footer-links-stack a {
+            text-decoration: none;
+            font-weight: bold;
             transition: 0.3s;
         }
         
-        .footer-logo:hover {
-            transform: scale(1.05);
+        /* Contact Us link (plain tan/white) */
+        .contact-text-link {
+            color: #f5f0e1;
+            font-size: 1.1em;
+            margin-bottom: 5px;
         }
         
-        .footer-right {
-            display: flex;
-            flex-direction: column; /* Stacks the button and the links */
-            align-items: flex-end;   /* Aligns them to the right side */
-            gap: 15px;
+        /* Discord & Instagram links (white with glow) */
+        .glow-link {
+            color: #ffffff;
+            font-size: 0.9em;
         }
         
-        .social-links {
-            display: flex;
-            flex-direction: column; /* Stacks Discord and Instagram */
-            gap: 8px;
-            text-align: right;
-        }
-        
-        .footer-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #f5f0e1;
-            color: #1a4a7a;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
+        .glow-link:hover {
+            color: #ffffff;
+            /* This creates the "Glow" effect */
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+            transform: translateX(5px); /* Slight shift to the right on hover */
         }
         
         .copyright {
+            max-width: 1000px;
+            margin: 30px auto 0 auto;
             font-size: 0.7em;
-            margin-top: 40px;
-            opacity: 0.7;
-            border-top: 1px solid rgba(245, 240, 225, 0.2);
-            padding-top: 20px;
+            opacity: 0.6;
         }
     </style>
 </head>
@@ -152,19 +157,15 @@
     </div>
 
     <footer>
-        <div class="footer-container">
-            <div class="footer-left">
-                <a href="index.html">
-                    <img src="CODEC.jpg" alt="CODEC Logo" class="footer-logo">
-                </a>
-            </div>
+        <div class="footer-content">
+            <a href="index.html">
+                <img src="CODEC.jpg" alt="CODEC Logo" class="footer-logo">
+            </a>
     
-            <div class="footer-right">
-                <a href="contact.html" class="footer-btn">Contact Us</a>
-                <div class="social-links">
-                    <a href="https://discord.gg/QSYSCFb" target="_blank">Discord</a>
-                    <a href="https://www.instagram.com/codec.uci/" target="_blank">Instagram</a>
-                </div>
+            <div class="footer-links-stack">
+                <a href="contact.html" class="contact-text-link">Contact Us</a>
+                <a href="https://discord.gg/QSYSCFb" target="_blank" class="glow-link">Discord</a>
+                <a href="https://www.instagram.com/codec.uci/" target="_blank" class="glow-link">Instagram</a>
             </div>
         </div>
         <p class="copyright">© 2026 CODEC | Community of Diverse Empowerment in Computing</p>
