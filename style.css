@@ -10,7 +10,7 @@ body {
 
 /* --- HEADER --- */
 header {
-    background-color: #ffffff;
+    background-color: #f5f0e1;
     padding: 5px 40px;
     display: flex;
     justify-content: space-between;
@@ -22,6 +22,7 @@ header {
 }
 
 .header-logo img {
+    background-color: transparent !important;
     height: 80px;
     width: 80px;
     aspect-ratio: 1/1;
