@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function() {
             <img src="images/CODEC_transparent.png" alt="CODEC Home">
         </a>
         <div class="nav-links">
-            <a href="about_us.html" class="glow-link">About Us</a>
-            <a href="events.html" class="glow-link">Events</a>
-            <a href="contact.html" class="glow-link">Contact Us</a>
+            <a href="about_us.html" class="header-glow">About Us</a>
+            <a href="events.html" class="header-glow">Events</a>
+            <a href="contact.html" class="header-glow">Contact Us</a>
         </div>
     </header>
     `;
