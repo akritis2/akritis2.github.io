@@ -131,3 +131,53 @@ footer {
     position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
     width: 400px; opacity: 0.05; z-index: -1; pointer-events: none;
 }
+
+/* --- BLOG / EVENTS STYLES --- */
+.blog-post {
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 40px 0;
+    border-radius: 15px;
+    border-bottom: 8px solid #1a4a7a; /* Matches the mission box style */
+    box-shadow: 2px 4px 15px rgba(0,0,0,0.05);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.date {
+    color: #1a4a7a;
+    font-weight: bold;
+    font-size: 0.85em;
+}
+
+.tag {
+    background: #e0d8c3;
+    color: #1a4a7a;
+    padding: 4px 12px;
+    border-radius: 5px;
+    font-size: 0.75em;
+    margin-left: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.blog-post h2 {
+    text-align: left; /* Keeps the post titles aligned with the text */
+    margin: 10px 0;
+}
+
+.blog-post ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.blog-post code {
+    background: #f5f0e1;
+    padding: 2px 5px;
+    border-radius: 4px;
+    color: #1a4a7a;
+}
