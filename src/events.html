@@ -11,14 +11,14 @@
         <p style="text-align: center; font-style: italic;">Check out what we've been up to.</p>
 
         <div id="events-list" class="events-grid" aria-live="polite">
-            <!-- Event cards will be populated here from events/events.json -->
+            <!-- Event cards will be populated here from events.json -->
         </div>
     </div>
 
     <script>
     document.addEventListener('DOMContentLoaded', function(){
         const list = document.getElementById('events-list');
-        fetch('events/events.json')
+        fetch('events.json')
             .then(r => r.json())
             .then(events => {
                 if(!Array.isArray(events) || events.length === 0){
@@ -38,7 +38,7 @@
                             <p class="summary">${ev.summary}</p>
                         </div>
                         <div class="overlay">
-                            <a class="details-btn" href="events/${ev.file}">See details</a>
+                            <a class="details-btn" href="event-detail.html?id=${ev.id}}">See details</a>
                         </div>
                     `;
 
