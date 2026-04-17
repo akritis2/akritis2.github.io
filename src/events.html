@@ -19,6 +19,7 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function(){
+        // 1. load events into events-list container + render them as cards on the page
         const list = document.getElementById('events-list');
         fetch('events.json')
             .then(r => r.json())
@@ -27,6 +28,8 @@
                     list.innerHTML = '<p>No events found.</p>';
                     return;
                 }
+                // 2. generate an event card for each event
+                // each card has date, tag, and summary info
                 events.forEach(ev => {
                     const card = document.createElement('article');
                     card.className = 'event-card';
@@ -40,11 +43,14 @@
                             <p class="summary">${ev.summary}</p>
                         </div>
                     `;
-
+                    
+                    // 3. add click handler to each card to navigate to the event-detail page for more info
+                    // give unique id
                     card.addEventListener('click', function(){
                         window.location.href = `event-detail.html?id=${encodeURIComponent(ev.id)}`;
                     });
-
+                    
+                    // add card to the list container
                     list.appendChild(card);
                 });
             })

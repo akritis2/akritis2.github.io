@@ -19,13 +19,16 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', async function() {
+      // 1. Setup (find HTML element to write to + load in the id from query params)
       const contentRef = document.getElementById('event-content');
       const params = new URLSearchParams(document.location.search);
       const eventId = params.get('id');
 
+      // 2. fetch / load in the events + lookup via id 
       let eventContent = '<p>Could not load event details.</p>';
       const events = await fetch('events.json')
         .then(r => r.json())
+        // fallback in case of any error
         .catch(err => {
           console.error(err);
           return [];
@@ -34,10 +37,12 @@
       const currentEvent = Array.isArray(events)
         ? events.find(ev => String(ev.id) === eventId)
         : undefined;
-
+      
+      // update content w/ currentEvent details
       if (currentEvent !== undefined) {
         const { content, attachments = [], title, date, tag } = currentEvent;
-
+        
+        // generate html for images and links, if any exist 
         const imageItems = attachments
           .filter(att => att.type === 'jpg' && att.filename)
           .map(att => `<li><img src="images/${att.filename}" alt="${title} image"></li>`)
@@ -47,7 +52,8 @@
           .filter(att => att.type === 'link' && att.href)
           .map(att => `<li><a href="${att.href}" target="_blank" rel="noopener noreferrer">${att.href}</a></li>`)
           .join('');
-
+        
+        // write main content of the event, along with images and links sections if they exist
         eventContent = `
           <article class="event-detail-card">
             <header>
@@ -65,6 +71,7 @@
         eventContent = '<p>Event not found. Please check the link and try again.</p>';
       }
 
+      // 3. write the contents to the HTML to display on the page
       contentRef.innerHTML = eventContent;
     })
   </script>

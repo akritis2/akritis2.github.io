@@ -26,7 +26,7 @@
 
       // 2. fetch / load in the events + lookup via id 
       // fallback in case of any error
-      let eventContent = '<p>Could not load events.</p>';
+      let eventContent = '<p>Could not load event details.</p>';
       const events = await fetch('events.json').then(r => r.json()).catch(err=> console.log(err))
       const currentEvent = events.find((ev) => ev.id === eventId);
 
