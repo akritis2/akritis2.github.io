@@ -21,5 +21,28 @@
         "filename": ""
       }
     ]
-  }
+  },
+    {
+      "id": "2fcae602-937d-4690-a299-bb9c389976e3",
+      "title": "Title",
+      "date": "Month Day, Year",
+      "summary": "Short Summary",
+      "highlights": [
+        "Bullet point",
+        "Highlights",
+        "Of the event"
+      ],
+      "tag": "What kind of event it was (e.g. social, tech talk, etc.)",
+      "content": "Full blog style content.",
+      "attachments": [
+        {
+          "type": "link",
+          "href": ""
+        },
+        {
+          "type": "jpg",
+          "filename": ""
+        }
+      ]
+    }
 ]
