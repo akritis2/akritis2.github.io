@@ -351,3 +351,63 @@ footer {
         max-height: 24px;
     }
 }
+
+/* --- EVENT IMAGES CAROUSEL --- */
+.modern-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    margin: 20px 0;
+}
+
+.carousel-window {
+    width: 100%;
+    height: 400px; /* Fixed height for consistency */
+    overflow: hidden;
+    border-radius: 12px;
+    background: #ffffff; /* Black background for any letterboxing */
+}
+
+.carousel-slide {
+    display: none; /* Hide all by default */
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide.active {
+    display: block; /* Show only the active one */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Keeps the whole photo visible without cropping */
+}
+
+/* Arrows */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(26, 74, 122, 0.8);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.carousel-btn:hover { background: #1a4a7a; }
+.prev { left: 10px; }
+.next { right: 10px; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

@@ -53,14 +53,28 @@
 
         // rest of the images go in the gallery
         const galleryImages = imagesItems.slice(1);
-        const galleryHtml = galleryImages.length > 0 
-          ? `<section class="event-gallery">
-              <h2>Photo Gallery</h2>
-              <div class="gallery-grid">
-                ${galleryImages.map(img => `<img src="images/event-images/${img.filename}" alt="Gallery image">`).join('')}
+        let galleryHtml = '';
+
+        if (galleryImages.length > 0) {
+          galleryHtml = `
+            <section class="event-gallery">
+              <h2>Event Gallery</h2>
+              <div class="modern-carousel">
+                <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+                
+                <div class="carousel-window">
+                  ${galleryImages.map((img, index) => `
+                    <div class="carousel-slide ${index === 0 ? 'active' : ''}">
+                      <img src="images/event-images/${img.filename}" alt="Gallery">
+                    </div>
+                  `).join('')}
+                </div>
+
+                <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
               </div>
-            </section>` 
-          : '';
+            </section>
+          `;
+        }
 
         // generate html for links 
         const linkItems = attachments
@@ -94,6 +108,22 @@
 
       // 3. write the contents to the HTML to display on the page
       contentRef.innerHTML = eventContent;
+      
+      // for the gallery at the end
+      let currentSlide = 0;
+      window.moveSlide = function(direction) {
+          const slides = document.querySelectorAll('.carousel-slide');
+          if (slides.length === 0) return;
+
+          // Remove active class from current
+          slides[currentSlide].classList.remove('active');
+
+          // Calculate next slide (looping back to start/end)
+          currentSlide = (currentSlide + direction + slides.length) % slides.length;
+
+          // Add active class to new slide
+          slides[currentSlide].classList.add('active');
+      };
     })
   </script>
 
