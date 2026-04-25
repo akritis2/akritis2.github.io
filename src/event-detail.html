@@ -11,7 +11,7 @@
 
   </div>
 
-  <div class="cw">
+  <div class="content-wrapper">
     <h1>Event Details</h1>
     <div id="event-content">
     </div>
@@ -40,15 +40,18 @@
       
       // update content w/ currentEvent details
       if (currentEvent !== undefined) {
-        const { content, attachments = [], title, date, tag } = currentEvent;
-        
+        const { content, images = [], links = [], title, date, tag } = currentEvent;
+
         // get all images to display in different sections
-        const imagesItems = attachments.filter(att => att.type === 'jpg' && att.filename);
+        const imagesItems = images.filter(img => img.filename);
   
         // "hero" images is first on the list in the json (used as the banner image)
         const heroImage = imagesItems[0];
+        // display the hero image at the top of the page
         const heroHtml = heroImage 
-          ? `<div class="event-hero"><img src="images/event-images/${heroImage.filename}" alt="${title} banner"></div>` 
+          ? `<div class="event-hero">
+              <img src="images/event-images/${heroImage.filename}" alt="${title} banner">
+            </div>` 
           : '';
 
         // rest of the images go in the gallery
@@ -65,7 +68,7 @@
                 <div class="carousel-window">
                   ${galleryImages.map((img, index) => `
                     <div class="carousel-slide ${index === 0 ? 'active' : ''}">
-                      <img src="images/event-images/${img.filename}" alt="Gallery">
+                      <img src="images/event-images/${img.filename}" alt="Gallery" class="clickable-image">
                     </div>
                   `).join('')}
                 </div>
@@ -77,9 +80,15 @@
         }
 
         // generate html for links 
-        const linkItems = attachments
-          .filter(att => att.type === 'link' && att.href)
-          .map(att => `<li><a href="${att.href}" target="_blank" rel="noopener noreferrer">${att.href}</a></li>`)
+        const linkItems = links
+          .filter(link => link.href)
+          .map(link => `
+            <li>
+              <a href="${link.href}" target="_blank" rel="noopener noreferrer">
+                ${link.href}
+              </a>
+            </li>
+          `)
           .join('');
         
         // write main content of the event, along with images and links sections if they exist
@@ -87,10 +96,10 @@
           <article class="event-detail-card">
             ${heroHtml}
             
-              <header>
+              <div class="event-header">
                 <h1>${title}</h1>
                 <p class="event-meta">${date}${tag ? ` · ${tag}` : ''}</p>
-              </header>
+              </div>
 
               <section class="event-body">
                 <p>${content || ''}</p>
@@ -108,6 +117,37 @@
 
       // 3. write the contents to the HTML to display on the page
       contentRef.innerHTML = eventContent;
+
+      // FULLSCREEN IMAGE VIEWER
+        const viewer = document.getElementById('image-viewer');
+        const viewerImg = document.getElementById('viewer-img');
+        const closeBtn = document.querySelector('.close-btn');
+
+        // open viewer
+        document.querySelectorAll('.clickable-image').forEach(img => {
+          img.addEventListener('click', () => {
+            viewerImg.src = img.src;
+            viewer.classList.remove('hidden');
+          });
+        });
+
+        // close viewer (X button)
+        closeBtn.addEventListener('click', () => {
+          viewer.classList.add('hidden');
+        });
+
+        // close when clicking background
+        viewer.addEventListener('click', (e) => {
+          if (e.target === viewer) {
+            viewer.classList.add('hidden');
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          viewer.classList.add('hidden');
+          }
+        });
       
       // for the gallery at the end
       let currentSlide = 0;
@@ -130,5 +170,10 @@
   <script src="components/header.js"></script>
   <script src="components/footer.js"></script>
   
+  <div id="image-viewer" class="image-viewer hidden">
+    <span class="close-btn">&times;</span>
+    <img id="viewer-img" src="" alt="Full view">
+  </div>
+
 </body>
 </html>
