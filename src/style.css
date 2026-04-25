@@ -78,6 +78,7 @@ header {
 
 /* --- FOOTER --- */
 footer {
+    font-family: 'open-sauce';
     background-color: var(--dark-blue);
     color: var(--cream);
     padding: 50px 20px;
@@ -154,7 +155,7 @@ footer {
 }
 
 .hero-subtitle {
-    color: #1751AA;
+    color: var(--dark-blue);
     font-size: 1.1rem;
     font-style: italic;
     margin-bottom: 1.5rem;
@@ -163,7 +164,7 @@ footer {
 
 .hero-tagline {
     font-family: 'open-sauce';
-    color: #1751AA;
+    color: var(--dark-blue);
     font-size: 1rem;
     line-height: 1.7;
     opacity: 0.8;
@@ -189,7 +190,7 @@ footer {
     object-fit: cover;
 }
 
-.hero-section h1 { color: #1751AA; font-size: 4em; }
+.hero-section h1 { color: var(--dark-blue); font-size: 4em; }
 
 .content-wrapper { max-width: 900px; margin: 60px auto; text-align: left; padding: 0 20px; }
 .mission-box { background: var(--cream); border-left: 8px solid var(--dark-blue); padding: 30px; border-radius: 0 15px 15px 0; }
@@ -201,7 +202,7 @@ footer {
 
 /* ABOUT OUR CLUB SECTION ON HOME PAGE */
 .about-section {
-    background-color: #B5D4F4;
+    background-color: var(--light-blue);
     padding: 4rem 5%;
     text-align: center;
 }
@@ -216,7 +217,7 @@ footer {
 
 .about-subtitle {
     font-family: 'open-sauce';
-    color: #185FA5;
+    color: var(--dark-blue);
     margin: 0 0 2.5rem;
 }
 
@@ -251,7 +252,7 @@ footer {
 }
 
 .announcement-strip {
-    background-color: #185FA5;
+    background-color: var(--dark-blue);
     color: #ffffff;
     text-align: center;
     padding: 0.6rem 5%;
@@ -264,7 +265,7 @@ footer {
 }
 
 .social-section {
-    background-color: #FDF9EE;
+    background-color: var(--cream);
     padding: 4rem 5%;
     text-align: center;
 }
@@ -286,6 +287,10 @@ footer {
 
 html {
     scroll-behavior: smooth;
+}
+
+#about {
+    scroll-margin-top: 100px;
 }
 
 /* --- ABOUT PAGE SPECIFIC --- */
