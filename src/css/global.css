@@ -20,12 +20,50 @@
     font-style: normal;
 }
 
-/* --- COLOR PALETTE --- */
+/* DESIGN TOKENS */
 :root {
+    /* COLORS */
     --cream: #FDF9EE;
     --light-blue: #B2C3D7;
     --dark-blue: #1751AA;
     --darker-blue: #042C53;
+
+    /* TYPOGRAPHY */
+    --font-heading: "intro-rust", sans-serif;
+    --font-body: "open-sauce", sans-serif;
+    --font-body-light: "open-sauce-light", sans-serif;
+
+    /* FONT SIZES */
+    --text-heading: 2rem;
+    --text-body: 1.5rem;
+    --text-subsection: 1.2rem;
+
+    /* SPACING */
+    --space-sm: 10px;
+    --space-md: 20px;
+    --space-lg: 40px;
+    --space-xl: 60px;
+
+    /* RADIUS */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 15px;
+
+    /* SHADOW */
+    --shadow-soft: 2px 4px 15px rgba(0,0,0,0.05);
+}
+
+/* BASE STYLES */
+body {
+    font-family: var(--font-body);
+    background: var(--color-cream);
+    color: var(--color-dark-blue);
+    margin: 0;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    margin: 0;
 }
 
 /* --- GLOBAL STYLES --- */

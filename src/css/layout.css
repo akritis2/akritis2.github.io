@@ -1,0 +1,16 @@
+/* CENTERS PAGE CONTENT */
+.container {
+    max-width: 1000px;
+    margin: var(--space-xl) auto;
+    padding: 0 var(--space-md);
+}
+
+/* SECTION SPACING */
+.section {
+    margin-bottom: var(--space-xl);
+}
+
+/* CENTER */
+.center {
+    text-align: center;
+}
